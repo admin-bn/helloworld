@@ -102,7 +102,7 @@ spec:
                     sh "echo ${REGISTRY_PASS} | helm registry login registry-1.docker.io  -u ${REGISTRY_USER} --password-stdin"
                     sh "helm create hw"
                     sh "helm package hw"
-                    sh "helm push hw-1.tgz oci://registry-1.docker.io/bosenet/charts"
+                    sh "helm push hw-0.1.0.tgz oci://registry-1.docker.io/bosenet/charts"
               }
         }
       }
