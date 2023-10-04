@@ -99,6 +99,9 @@ spec:
                 )
               ]){
                     sh "helm version"
+                    sh "echo ${REGISTRY_PASS} | helm registry login hub.docker.com --username ${REGISTRY_USER} --password-stdin"
+                    sh "helm package chart --version 1 --app-version 1 --dependency-update"
+                    sh "helm push hw-1.tgz oci://hub.docker.com/hw/charts"
               }
         }
       }
