@@ -31,10 +31,14 @@ spec:
       - mountPath: "/root/.m2"
         name: bdop-jk-pv-claim
   - name: helm
-  - image: lachlanevenson/k8s-helm:v3.1.1
+  - image: alpine/helm:3.10.2
     command:
     - cat
     tty: true      
+  volumeMounts:
+    - name: bdop-jk-pv-claim
+      hostPath:
+        path: /usr/local/bin/helm
   - name: docker
     image: docker:19.03.6
     command:
