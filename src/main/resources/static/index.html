@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport">
+    <title>File Upload Example</title>
+    <link rel="stylesheet" href="./main.css" />
+</head>
+<body>
+    <noscript>
+        <h2 style="text-align: center;">Sorry! Browser does not support Javascript.</h2>
+    </noscript>
+    <div class="tef_section">
+        <div class="file-upload-header">
+            <h2>Multi Day Travel Expenses as of the year 2023</h2>
+        </div>
+ 		<table style="width:900px;">  
+			<tr><td>Name:</td><td colspan="2"><input type="text" name="name" class="file-upload"/></td></tr>  
+			<tr>
+				<td>Dep Date:</td><td><input type="date" name="dep_date" required/></td>
+				<td>Time:</td><td><input type="time" id="appt" name="dep_time" min="09:00" max="18:00" required /></td>
+			</tr>  
+			<tr>
+				<td>Ret Date:</td><td><input type="date" name="dep_date" required/></td>
+				<td>Time:</td><td><input type="time" id="appt" name="dep_time" min="09:00" max="18:00" required /></td>
+			</tr> 
+			<tr><td>Travel Days:</td><td><input type="text" name="name" class="file-upload" readonly="readonly"/></td></tr> 
+		</table>
+	</div>
+    <script src="./js/main.js"></script>
+</body>
+</html>
