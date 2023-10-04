@@ -104,7 +104,7 @@ spec:
                     sh "helm create hw"
                     sh "helm package hw"
                     sh "curl -u ${NX_USER}:${NX_PASS} http://ae183eab50180425691974eb08081fd2-1806456043.us-east-1.elb.amazonaws.com:8081/repository/bdop-charts/ --upload-file hw-0.1.0.tgz -v"
-                    sh "helm install bdop-charts/hw -n bdop"
+                    sh "helm install hw bdop-charts/hw -n bdop"
               }
         }
       }
