@@ -100,7 +100,8 @@ spec:
               ]){
                     sh "helm version"
                     sh "echo ${REGISTRY_PASS} | helm registry login registry-1.docker.io  -u ${REGISTRY_USER} --password-stdin"
-                    sh "helm package chart --version 1 --app-version 1 --dependency-update"
+                    sh "helm create hw"
+                    sh "helm package hw"
                     sh "helm push hw-1.tgz oci://registry-1.docker.io/bosenet/charts"
               }
         }
