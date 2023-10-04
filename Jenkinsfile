@@ -30,6 +30,11 @@ spec:
     volumeMounts:
       - mountPath: "/root/.m2"
         name: bdop-jk-pv-claim
+  - name: helm
+  - image: lachlanevenson/k8s-helm:v3.1.1
+    command:
+    - cat
+    tty: true      
   - name: docker
     image: docker:19.03.6
     command:
@@ -76,6 +81,21 @@ spec:
                     sh "docker build -t hello-world ."
                     sh "docker tag hello-world:latest bosenet/hello-world:latest"
                     sh "docker push  bosenet/hello-world:latest"
+              }
+        }
+      }
+    }
+    
+     stage('helm') {
+      steps {
+        container('helm') {
+                withCredentials([
+                usernamePassword(
+                  credentialsId: "bdop-docker-repo",
+                  usernameVariable: 'REGISTRY_USER', passwordVariable: 'REGISTRY_PASS'
+                )
+              ]){
+                    sh "helm version"
               }
         }
       }
