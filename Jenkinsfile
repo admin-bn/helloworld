@@ -99,8 +99,8 @@ spec:
                 )
               ]){
                     sh "helm version"
-                    sh "helm repo add hw-chart http://ae183eab50180425691974eb08081fd2-1806456043.us-east-1.elb.amazonaws.com:8081/repository/bdop-charts/ -u ${NX_USER} -p ${NX_PASS}"
-                    sh "echo ${REGISTRY_PASS} | helm registry login registry-1.docker.io  -u ${REGISTRY_USER} --password-stdin"
+                    sh "helm repo add hw-chart http://ae183eab50180425691974eb08081fd2-1806456043.us-east-1.elb.amazonaws.com:8081/repository/bdop-charts/ --username ${NX_USER} --password ${NX_PASS}"
+                    //sh "echo ${REGISTRY_PASS} | helm registry login registry-1.docker.io  -u ${REGISTRY_USER} --password-stdin"
                     sh "helm create hw"
                     sh "helm package hw"
                     sh "helm push hw-0.1.0.tgz http://ae183eab50180425691974eb08081fd2-1806456043.us-east-1.elb.amazonaws.com:8081/repository/bdop-charts"
