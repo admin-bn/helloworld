@@ -108,7 +108,7 @@ spec:
       post { 
         always { 
             echo 'I will always run!'
-            //office365ConnectorSend status: currentBuild.currentResult, webhookUrl: 'https://bosenetltd.webhook.office.com/webhookb2/9e3e3e8a-8b5d-4587-a54f-6bf461785d5c@f129bd96-bdd0-437a-a6c0-bcce2c450aae/JenkinsCI/a08c7dcc8f374099a01b60e77d60964d/1bd1d700-0b69-4cda-aa0b-5175d904c8e2'
+            office365ConnectorSend status: currentBuild.currentResult, webhookUrl: 'https://bosenetltd.webhook.office.com/webhookb2/9e3e3e8a-8b5d-4587-a54f-6bf461785d5c@f129bd96-bdd0-437a-a6c0-bcce2c450aae/JenkinsCI/a08c7dcc8f374099a01b60e77d60964d/1bd1d700-0b69-4cda-aa0b-5175d904c8e2'
         }
     }
 }
