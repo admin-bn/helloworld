@@ -103,7 +103,7 @@ spec:
                     //sh "echo ${REGISTRY_PASS} | helm registry login registry-1.docker.io  -u ${REGISTRY_USER} --password-stdin"
                     sh "helm create hw"
                     sh "helm package hw"
-                    sh "helm push hw-0.1.0.tgz http://ae183eab50180425691974eb08081fd2-1806456043.us-east-1.elb.amazonaws.com:8081/repository/bdop-charts"
+                    sh "helm push hw-0.1.0.tgz oci://ae183eab50180425691974eb08081fd2-1806456043.us-east-1.elb.amazonaws.com:8081/repository/bdop-charts"
               }
         }
       }
