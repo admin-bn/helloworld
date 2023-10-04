@@ -37,7 +37,7 @@ spec:
     tty: true      
     volumeMounts:
       - mountPath: /usr/local/bin/helm
-      	name: bdop-jk-pv-claim
+        name: bdop-jk-pv-claim
   - name: docker
     image: docker:19.03.6
     command:
