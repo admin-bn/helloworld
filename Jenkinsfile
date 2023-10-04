@@ -73,6 +73,9 @@ spec:
                     echo "${REGISTRY_PASS}" 
                     echo "${REGISTRY_USER}" 
                     sh "docker login -u ${REGISTRY_USER} -p ${REGISTRY_PASS} "
+                    sh "docker build -t hello-world ."
+                    sh "docker tag hello-world:latest bosenet/hello-world:latest"
+                    sh "docker push  bosenet/hello-world:latest"
               }
         }
       }
