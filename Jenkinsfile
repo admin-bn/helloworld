@@ -94,15 +94,16 @@ spec:
         container('helm') {
                 withCredentials([
                 usernamePassword(
-                  credentialsId: "bdop-docker-repo",
-                  usernameVariable: 'REGISTRY_USER', passwordVariable: 'REGISTRY_PASS'
+                  credentialsId: "bdop_nexus",
+                  usernameVariable: 'NX_USER', passwordVariable: 'NX_PASS'
                 )
               ]){
                     sh "helm version"
+                    sh "helm repo add hw-chart http://ae183eab50180425691974eb08081fd2-1806456043.us-east-1.elb.amazonaws.com:8081/repository/bdop-charts/ -u ${NX_USER} -p ${NX_PASS}"
                     sh "echo ${REGISTRY_PASS} | helm registry login registry-1.docker.io  -u ${REGISTRY_USER} --password-stdin"
                     sh "helm create hw"
                     sh "helm package hw"
-                    sh "helm push hw-0.1.0.tgz oci://registry-1.docker.io/bosenet/charts"
+                    sh "helm push hw-0.1.0.tgz http://ae183eab50180425691974eb08081fd2-1806456043.us-east-1.elb.amazonaws.com:8081/repository/bdop-charts"
               }
         }
       }
