@@ -103,7 +103,7 @@ spec:
 	                    sh "helm list -n bdop"
 	                    sh "echo Uploading Helm chart to Artifactory"
 	                    sh "helm package hello-world"
-	                    sh "curl -u ${NX_USER}:${NX_PASS} http://ae183eab50180425691974eb08081fd2-1806456043.us-east-1.elb.amazonaws.com:8081/repository/bdop-charts/ --upload-file hello-world.tgz -v"
+	                    sh "curl -u ${NX_USER}:${NX_PASS} http://ae183eab50180425691974eb08081fd2-1806456043.us-east-1.elb.amazonaws.com:8081/repository/bdop-charts/ --upload-file hello-world-0.1.0.tgz -v"
 	                    sh "echo Helm chart successfully uploaded to Artifactory"
 	                    sh "echo Deploying Helm Chart to BDOP Cluster"
 	                    sh "helm upgrade hello-world ./hello-world --namespace=bdop"
