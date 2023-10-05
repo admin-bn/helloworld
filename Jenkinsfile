@@ -100,7 +100,7 @@ spec:
 	              ]){
 	                    sh "helm version"
 	                    sh "helm lint ./hello-world"
-	                    sh "helm upgrade --dry-run --install hw111 ${pwd()}/hello-world --namespace bdop"
+	                    sh "helm upgrade --dry-run --install hw121 ${pwd()}/hello-world --namespace bdop"
 	                    sleep(20)
 	                    
 	                    //sh "helm upgrade --dry-run --install hw-chart --set imageTag=1.0.0,replicas=1,cpu=10m,memory=128Mi --namespace=bdop"
