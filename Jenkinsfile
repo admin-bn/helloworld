@@ -102,7 +102,7 @@ spec:
 	                    sh "helm lint ./hello-world"
 	                    //sh "helm upgrade --dry-run --install hw121 /home/jenkins/agent/workspace/HelloWorld/hello-world --namespace bdop"
 	                    
-	                    sh "helm upgrade --dry-run --install hello-world ./hello-world --namespace=bdop"
+	                    sh "helm install hello-world ./hello-world --namespace=bdop"
 	                    //sh "helm repo add hw-chart http://ae183eab50180425691974eb08081fd2-1806456043.us-east-1.elb.amazonaws.com:8081/repository/bdop-charts/ --username ${NX_USER} --password ${NX_PASS}"
 	                    //sh "helm repo add https://admin-bn.github.io/bn-test-helm"
 	                    //sh "echo ${REGISTRY_PASS} | helm registry login registry-1.docker.io  -u ${REGISTRY_USER} --password-stdin"
