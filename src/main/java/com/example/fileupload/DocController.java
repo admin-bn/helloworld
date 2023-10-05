@@ -23,7 +23,7 @@ public class DocController {
 	 
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public @ResponseBody String hello() {
-		return "Hello";
+		return "Hello World";
 	}
 	    
 	@PostMapping("/upload")
