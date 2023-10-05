@@ -101,7 +101,7 @@ spec:
 	              		sh "echo ${pwd()}"
 	                    sh "helm version"
 	                    sh "helm lint ./hello-world"
-	                    sh "helm --dry-run install pod-${env.BUILD_NUMBER} ./hello-world --namespace bdop"
+	                    sh "helm --dry-run --install pod-${env.BUILD_NUMBER} ./hello-world --namespace bdop"
 	                    sleep(20)
 	                    echo "Application successfully deployed. Use helm status  to check"
 	                    //sh "helm upgrade --dry-run --install pod-${env.BUILD_NUMBER} ./hello-world  --set imageTag=1.0.0,replicas=1,cpu=10m,memory=128Mi --namespace=bdop"
