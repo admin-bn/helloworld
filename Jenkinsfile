@@ -98,6 +98,7 @@ spec:
 	                  usernameVariable: 'NX_USER', passwordVariable: 'NX_PASS'
 	                )
 	              ]){
+	              		sh "echo ${pwd()}"
 	                    sh "helm version"
 	                    sh "helm lint ./hello-world"
 	                    sh "helm install hw ${pwd()}/hello-world --namespace bdop"
