@@ -100,9 +100,9 @@ spec:
 	              ]){
 	                    sh "helm version"
 	                    sh "helm lint ./hello-world"
-	                    sh "helm upgrade --dry-run --install hw ./hello-world --namespace bdop"
+	                    sh "helm upgrade  --install hw ./hello-world --namespace bdop"
 	                    sleep(20)
-	                    echo "Application successfully deployed. Use helm status ${args.name} to check"
+	                    echo "Application successfully deployed. Use helm status  to check"
 	                    //sh "helm upgrade --dry-run --install hw-chart --set imageTag=1.0.0,replicas=1,cpu=10m,memory=128Mi --namespace=bdop"
 	                    //sh "helm repo add hw-chart http://ae183eab50180425691974eb08081fd2-1806456043.us-east-1.elb.amazonaws.com:8081/repository/bdop-charts/ --username ${NX_USER} --password ${NX_PASS}"
 	                    //sh "helm repo add https://admin-bn.github.io/bn-test-helm"
