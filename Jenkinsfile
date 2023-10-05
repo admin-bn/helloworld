@@ -98,13 +98,12 @@ spec:
 	                  usernameVariable: 'NX_USER', passwordVariable: 'NX_PASS'
 	                )
 	              ]){
-	              		sh "echo ${pwd()}"
 	                    sh "helm version"
 	                    sh "helm lint ./hello-world"
-	                    sh "helm --dry-run --install pod-${env.BUILD_NUMBER} ./hello-world --namespace bdop"
+	                    sh "helm upgrade --dry-run --install hw111 ./hello-world --namespace bdop"
 	                    sleep(20)
-	                    echo "Application successfully deployed. Use helm status  to check"
-	                    //sh "helm upgrade --dry-run --install pod-${env.BUILD_NUMBER} ./hello-world  --set imageTag=1.0.0,replicas=1,cpu=10m,memory=128Mi --namespace=bdop"
+	                    
+	                    //sh "helm upgrade --dry-run --install hw-chart --set imageTag=1.0.0,replicas=1,cpu=10m,memory=128Mi --namespace=bdop"
 	                    //sh "helm repo add hw-chart http://ae183eab50180425691974eb08081fd2-1806456043.us-east-1.elb.amazonaws.com:8081/repository/bdop-charts/ --username ${NX_USER} --password ${NX_PASS}"
 	                    //sh "helm repo add https://admin-bn.github.io/bn-test-helm"
 	                    //sh "echo ${REGISTRY_PASS} | helm registry login registry-1.docker.io  -u ${REGISTRY_USER} --password-stdin"
